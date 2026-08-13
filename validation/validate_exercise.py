@@ -20,14 +20,14 @@ validate_exercise_generic.py
 使用例:
 
 # JSON事前検証
-python3 validate_exercise_generic.py pre \
+python3 validate_exercise.py pre \
   --network network.json \
   --pcap-design pcap_design.json \
   --answer-key answer_key.json \
   --out pre_validation_report.md
 
 # PCAP本検証
-python3 validate_exercise_generic.py post \
+python3 validate_exercise.py post \
   --network network.json \
   --pcap-design pcap_design.json \
   --answer-key answer_key.json \

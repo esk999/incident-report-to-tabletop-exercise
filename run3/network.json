@@ -1,0 +1,361 @@
+{
+  "schema_version": "1.0",
+  "purpose": "PCAP内で使用してよい内部資産・IPアドレスを確認するための基準データ。",
+  "internal_networks": [
+    "192.168.10.0/24",
+    "192.168.20.0/24",
+    "192.168.30.0/24",
+    "192.168.40.0/24",
+    "192.168.50.0/24",
+    "192.168.100.0/24"
+  ],
+  "allowed_internal_ips_for_pcap_validation": [
+    "192.168.10.1",
+    "192.168.10.2",
+    "192.168.10.3",
+    "192.168.10.4",
+    "192.168.20.1",
+    "192.168.20.2",
+    "192.168.20.3",
+    "192.168.20.4",
+    "192.168.30.1",
+    "192.168.30.2",
+    "192.168.30.3",
+    "192.168.30.4",
+    "192.168.40.1",
+    "192.168.40.2",
+    "192.168.40.3",
+    "192.168.40.4",
+    "192.168.50.1",
+    "192.168.50.2",
+    "192.168.50.3",
+    "192.168.50.4",
+    "192.168.50.5",
+    "192.168.50.6",
+    "192.168.50.7",
+    "192.168.50.8",
+    "192.168.100.1",
+    "192.168.100.2",
+    "192.168.10.254",
+    "192.168.20.254",
+    "192.168.30.254",
+    "192.168.40.254",
+    "192.168.50.254",
+    "192.168.100.254"
+  ],
+  "allowed_public_placeholder_ips_for_pcap_validation": [
+    "203.0.113.11",
+    "203.0.113.12",
+    "203.0.113.13"
+  ],
+  "segments": [
+    {
+      "segment_id": "VLAN10",
+      "name": "General Affairs",
+      "vlan": "VLAN10",
+      "network_range": "192.168.10.0/24",
+      "gateway": "192.168.10.254",
+      "role": "client network",
+      "unknowns": []
+    },
+    {
+      "segment_id": "VLAN20",
+      "name": "Accounting",
+      "vlan": "VLAN20",
+      "network_range": "192.168.20.0/24",
+      "gateway": "192.168.20.254",
+      "role": "client network",
+      "unknowns": []
+    },
+    {
+      "segment_id": "VLAN30",
+      "name": "Sales",
+      "vlan": "VLAN30",
+      "network_range": "192.168.30.0/24",
+      "gateway": "192.168.30.254",
+      "role": "client network",
+      "unknowns": []
+    },
+    {
+      "segment_id": "VLAN40",
+      "name": "IT Support",
+      "vlan": "VLAN40",
+      "network_range": "192.168.40.0/24",
+      "gateway": "192.168.40.254",
+      "role": "client network",
+      "unknowns": []
+    },
+    {
+      "segment_id": "VLAN50",
+      "name": "Development",
+      "vlan": "VLAN50",
+      "network_range": "192.168.50.0/24",
+      "gateway": "192.168.50.254",
+      "role": "client network",
+      "unknowns": []
+    },
+    {
+      "segment_id": "VLAN100",
+      "name": "Internal Services",
+      "vlan": "VLAN100",
+      "network_range": "192.168.100.0/24",
+      "gateway": "192.168.100.254",
+      "role": "internal service network",
+      "unknowns": []
+    },
+    {
+      "segment_id": "DMZ",
+      "name": "Public-facing Service",
+      "vlan": "DMZ",
+      "network_range": "203.0.113.0/24",
+      "gateway": "203.0.113.11",
+      "role": "public-facing service network using documentation-only addresses",
+      "unknowns": [
+        "The source topology redacts the public prefix as 133.x.y.0/24; 203.0.113.0/24 is used here only as an exercise/documentation placeholder."
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "hostname": "AD-SRV-01",
+      "ip": "192.168.100.1",
+      "segment": "VLAN100",
+      "role": "Active Directory",
+      "open_ports": [
+        53,
+        88,
+        135,
+        389,
+        445
+      ],
+      "publicly_accessible": false
+    },
+    {
+      "hostname": "FILE-SRV-01",
+      "ip": "192.168.100.2",
+      "segment": "VLAN100",
+      "role": "File Sharing",
+      "open_ports": [
+        22,
+        139,
+        445
+      ],
+      "publicly_accessible": false
+    },
+    {
+      "hostname": "WEB-SRV-01",
+      "ip": "203.0.113.12",
+      "segment": "DMZ",
+      "role": "Public Web Service",
+      "open_ports": [
+        80,
+        443
+      ],
+      "publicly_accessible": true
+    },
+    {
+      "hostname": "MAIL-SRV-01",
+      "ip": "203.0.113.13",
+      "segment": "DMZ",
+      "role": "Mail Service",
+      "open_ports": [
+        25,
+        465,
+        587,
+        993
+      ],
+      "publicly_accessible": true
+    }
+  ],
+  "client_terminals": [
+    {
+      "hostname": "GA-PC-01",
+      "ip": "192.168.10.1",
+      "segment": "VLAN10",
+      "department": "General Affairs",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "GA-PC-02",
+      "ip": "192.168.10.2",
+      "segment": "VLAN10",
+      "department": "General Affairs",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "GA-PC-03",
+      "ip": "192.168.10.3",
+      "segment": "VLAN10",
+      "department": "General Affairs",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "GA-PC-04",
+      "ip": "192.168.10.4",
+      "segment": "VLAN10",
+      "department": "General Affairs",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "ACC-PC-01",
+      "ip": "192.168.20.1",
+      "segment": "VLAN20",
+      "department": "Accounting",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "ACC-PC-02",
+      "ip": "192.168.20.2",
+      "segment": "VLAN20",
+      "department": "Accounting",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "ACC-PC-03",
+      "ip": "192.168.20.3",
+      "segment": "VLAN20",
+      "department": "Accounting",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "ACC-PC-04",
+      "ip": "192.168.20.4",
+      "segment": "VLAN20",
+      "department": "Accounting",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "SALES-PC-01",
+      "ip": "192.168.30.1",
+      "segment": "VLAN30",
+      "department": "Sales",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "SALES-PC-02",
+      "ip": "192.168.30.2",
+      "segment": "VLAN30",
+      "department": "Sales",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "SALES-PC-03",
+      "ip": "192.168.30.3",
+      "segment": "VLAN30",
+      "department": "Sales",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "SALES-PC-04",
+      "ip": "192.168.30.4",
+      "segment": "VLAN30",
+      "department": "Sales",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "IT-PC-01",
+      "ip": "192.168.40.1",
+      "segment": "VLAN40",
+      "department": "IT Support",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "IT-PC-02",
+      "ip": "192.168.40.2",
+      "segment": "VLAN40",
+      "department": "IT Support",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "IT-PC-03",
+      "ip": "192.168.40.3",
+      "segment": "VLAN40",
+      "department": "IT Support",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "IT-PC-04",
+      "ip": "192.168.40.4",
+      "segment": "VLAN40",
+      "department": "IT Support",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "DEV-PC-01",
+      "ip": "192.168.50.1",
+      "segment": "VLAN50",
+      "department": "Development",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "DEV-PC-02",
+      "ip": "192.168.50.2",
+      "segment": "VLAN50",
+      "department": "Development",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "DEV-PC-03",
+      "ip": "192.168.50.3",
+      "segment": "VLAN50",
+      "department": "Development",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "DEV-PC-04",
+      "ip": "192.168.50.4",
+      "segment": "VLAN50",
+      "department": "Development",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "DEV-PC-05",
+      "ip": "192.168.50.5",
+      "segment": "VLAN50",
+      "department": "Development",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "DEV-PC-06",
+      "ip": "192.168.50.6",
+      "segment": "VLAN50",
+      "department": "Development",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "DEV-PC-07",
+      "ip": "192.168.50.7",
+      "segment": "VLAN50",
+      "department": "Development",
+      "role": "client_terminal"
+    },
+    {
+      "hostname": "DEV-PC-08",
+      "ip": "192.168.50.8",
+      "segment": "VLAN50",
+      "department": "Development",
+      "role": "client_terminal"
+    }
+  ],
+  "security_devices": [
+    {
+      "device_id": "UTM-VPN-01",
+      "hostname": "UTM-VPN-01",
+      "ip": "203.0.113.11",
+      "segment": "DMZ",
+      "role": "Internet edge security device and VPN entry point",
+      "internal_gateway_ips": [
+        "192.168.10.254",
+        "192.168.20.254",
+        "192.168.30.254",
+        "192.168.40.254",
+        "192.168.50.254",
+        "192.168.100.254"
+      ]
+    }
+  ],
+  "unknowns": [
+    "UTM(VPN)のベンダー、製品型番、具体的なVPN方式はネットワーク構成図では指定されていない。",
+    "公開側の元資料表記133.x.y.11〜13は伏字であるため、Step 1の設計に合わせて文書化用の203.0.113.11〜13へ置換している。"
+  ]
+}

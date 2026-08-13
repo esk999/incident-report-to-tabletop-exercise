@@ -1,0 +1,653 @@
+{
+  "schema_version": "1.0",
+  "pcap_observable_findings": [
+    {
+      "finding_id": "F-001",
+      "related_situation_id": "INJ-01",
+      "related_traffic_id": "TR-INJ01-001",
+      "description": "external-probe-01.example.invalidからUTM-VPN-01へのTCP/443通信が短時間に複数回観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-002",
+      "related_situation_id": "INJ-01",
+      "related_traffic_id": "TR-CMP01-001",
+      "description": "external-maintenance-01.example.invalidからUTM-VPN-01へのTCP/443通信が比較的低頻度で観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-003",
+      "related_situation_id": "INJ-02",
+      "related_traffic_id": "TR-INJ02-001",
+      "description": "UTM-VPN-01のVLAN100側ゲートウェイからAD-SRV-01へのDNS通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-004",
+      "related_situation_id": "INJ-02",
+      "related_traffic_id": "TR-INJ02-002",
+      "description": "UTM-VPN-01のVLAN100側ゲートウェイからAD-SRV-01へのKerberos関連通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-005",
+      "related_situation_id": "INJ-02",
+      "related_traffic_id": "TR-INJ02-003",
+      "description": "UTM-VPN-01のVLAN100側ゲートウェイからAD-SRV-01へのLDAP通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-006",
+      "related_situation_id": "INJ-02",
+      "related_traffic_id": "TR-INJ02-004",
+      "description": "UTM-VPN-01のVLAN100側ゲートウェイからFILE-SRV-01へのSMB通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-007",
+      "related_situation_id": "INJ-02",
+      "related_traffic_id": "TR-INJ02-005",
+      "description": "UTM-VPN-01のVLAN10側ゲートウェイからGA-PC-01へのTCP/445通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-008",
+      "related_situation_id": "INJ-02",
+      "related_traffic_id": "TR-INJ02-006",
+      "description": "UTM-VPN-01のVLAN20側ゲートウェイからACC-PC-01へのTCP/445通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-009",
+      "related_situation_id": "INJ-02",
+      "related_traffic_id": "TR-INJ02-007",
+      "description": "UTM-VPN-01のVLAN50側ゲートウェイからDEV-PC-01へのTCP/445通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-010",
+      "related_situation_id": "INJ-02",
+      "related_traffic_id": "TR-CMP02-001",
+      "description": "GA-PC-01からAD-SRV-01への比較用のDNS通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-011",
+      "related_situation_id": "INJ-03",
+      "related_traffic_id": "TR-INJ03-001",
+      "description": "DEV-PC-03からFILE-SRV-01へのSMB通信が短時間に集中して観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-012",
+      "related_situation_id": "INJ-03",
+      "related_traffic_id": "TR-CMP03-001",
+      "description": "GA-PC-02からFILE-SRV-01への比較用の低頻度SMB通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-013",
+      "related_situation_id": "INJ-04",
+      "related_traffic_id": "TR-INJ04-001",
+      "description": "GA-PC-01からFILE-SRV-01へのSMB通信が利用不可申告前後に観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-014",
+      "related_situation_id": "INJ-04",
+      "related_traffic_id": "TR-INJ04-002",
+      "description": "DEV-PC-01からFILE-SRV-01へのSMB通信が利用不可申告前後に観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-015",
+      "related_situation_id": "INJ-04",
+      "related_traffic_id": "TR-INJ04-003",
+      "description": "DEV-PC-03からGA-PC-01へのTCP/445通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-016",
+      "related_situation_id": "INJ-04",
+      "related_traffic_id": "TR-CMP04-001",
+      "description": "IT-PC-01からAD-SRV-01への比較用のDNS通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-017",
+      "related_situation_id": "INJ-05",
+      "related_traffic_id": "TR-INJ05-001",
+      "description": "DEV-PC-03からexternal-observer-01.example.invalidへのHTTPS通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    },
+    {
+      "finding_id": "F-018",
+      "related_situation_id": "INJ-05",
+      "related_traffic_id": "TR-CMP05-001",
+      "description": "SALES-PC-01から自組織DMZのWEB-SRV-01への比較用HTTPS通信が観測される。",
+      "evidence_to_observe": [
+        "通信時刻",
+        "送信元IPアドレス",
+        "宛先IPアドレス",
+        "プロトコル",
+        "宛先ポート",
+        "通信回数または継続時間",
+        "通信方向"
+      ],
+      "basis": "exercise_assumption"
+    }
+  ],
+  "non_pcap_findings": [
+    {
+      "finding_id": "NF-001",
+      "related_situation_id": [
+        "INJ-01",
+        "INJ-02",
+        "INJ-05"
+      ],
+      "description": "VPN認証の成否はPCAPだけでは断定できない。",
+      "why_not_pcap_observable": "PCAPでは接続の存在やポート、時刻は確認できるが、UTM/VPN装置が認証を成功・失敗と判定した結果は装置ログに依存する。",
+      "required_information": [
+        "UTM/VPN認証ログ",
+        "接続元別の成功・失敗ログ",
+        "対象アカウントと認証時刻"
+      ],
+      "basis": "expert_knowledge"
+    },
+    {
+      "finding_id": "NF-002",
+      "related_situation_id": [
+        "INJ-01",
+        "INJ-05"
+      ],
+      "description": "VPN装置の脆弱性悪用や認証情報窃取の成否はPCAPだけでは断定できない。",
+      "why_not_pcap_observable": "演習PCAPには実攻撃可能な悪用リクエストや認証情報を含めず、装置内部の脆弱性判定や資格情報取得結果も観測しない。",
+      "required_information": [
+        "UTM/VPNのバージョンと脆弱性管理状況",
+        "管理ログ",
+        "設定変更履歴",
+        "認証情報変更履歴"
+      ],
+      "basis": "expert_knowledge"
+    },
+    {
+      "finding_id": "NF-003",
+      "related_situation_id": [
+        "INJ-02",
+        "INJ-05"
+      ],
+      "description": "AD認証の成否や管理者権限取得の成否はPCAPだけでは断定できない。",
+      "why_not_pcap_observable": "KerberosやLDAP通信の存在は確認できても、最終的なログオン結果や権限付与はAD側のイベント記録やアカウント情報が必要である。",
+      "required_information": [
+        "ADセキュリティログ",
+        "Kerberos関連ログ",
+        "アカウント変更履歴",
+        "グループメンバーシップ変更履歴"
+      ],
+      "basis": "expert_knowledge"
+    },
+    {
+      "finding_id": "NF-004",
+      "related_situation_id": [
+        "INJ-02",
+        "INJ-04",
+        "INJ-05"
+      ],
+      "description": "端末上で実行されたコマンドやプロセス、水平展開の成功はPCAPだけでは断定できない。",
+      "why_not_pcap_observable": "PCAPは通信の存在を示すが、端末内部のプロセス実行結果や遠隔操作の成否は端末・EDR・OSログが必要である。",
+      "required_information": [
+        "EDRログ",
+        "端末OSイベントログ",
+        "プロセス実行履歴",
+        "サービス作成・タスク実行履歴"
+      ],
+      "basis": "expert_knowledge"
+    },
+    {
+      "finding_id": "NF-005",
+      "related_situation_id": [
+        "INJ-03",
+        "INJ-04",
+        "INJ-05"
+      ],
+      "description": "ファイル閲覧、コピー、変更、削除の有無はPCAPだけでは断定できない。",
+      "why_not_pcap_observable": "SMB通信の存在や通信量は確認できるが、演習PCAPは特定ファイル操作を断定できる内容を含めず、ファイルサーバ側の監査結果が必要である。",
+      "required_information": [
+        "FILE-SRV-01のアクセスログ",
+        "ファイル監査ログ",
+        "共有設定",
+        "対象アカウントの利用履歴"
+      ],
+      "basis": "expert_knowledge"
+    },
+    {
+      "finding_id": "NF-006",
+      "related_situation_id": [
+        "INJ-05"
+      ],
+      "description": "外部宛HTTPS通信がC2通信として成立したか、情報窃取が行われたかはPCAPだけでは断定できない。",
+      "why_not_pcap_observable": "HTTPS通信の宛先・時刻・通信量は確認できても、暗号化された通信内容や攻撃者の意図、送信データの意味は確認できない。",
+      "required_information": [
+        "プロキシまたはUTMログ",
+        "TLS関連ログが取得可能な場合の接続情報",
+        "EDRログ",
+        "端末上のファイルアクセス履歴",
+        "外部通信先の評価情報"
+      ],
+      "basis": "expert_knowledge"
+    },
+    {
+      "finding_id": "NF-007",
+      "related_situation_id": [
+        "INJ-04",
+        "INJ-05"
+      ],
+      "description": "マルウェア実行やファイル暗号化の実行はPCAPだけでは断定できない。",
+      "why_not_pcap_observable": "利用者申告と通信変化だけでは端末・サーバ上の実行内容を特定できず、暗号化やマルウェア実行はホスト側証跡の確認が必要である。",
+      "required_information": [
+        "EDR/AVログ",
+        "FILE-SRV-01のファイルシステム調査",
+        "端末OSイベントログ",
+        "ファイル更新履歴"
+      ],
+      "basis": "expert_knowledge"
+    },
+    {
+      "finding_id": "NF-008",
+      "related_situation_id": [
+        "INJ-04",
+        "INJ-05"
+      ],
+      "description": "侵害端末、原因端末、侵害範囲の確定はPCAPだけではできない。",
+      "why_not_pcap_observable": "複数端末の通信関係は観測できるが、それぞれの端末が侵害されたか、どの端末が起点かを確定するにはホストログと認証ログの突合が必要である。",
+      "required_information": [
+        "EDRログ",
+        "端末OSイベントログ",
+        "ADログ",
+        "UTM/VPNログ",
+        "FILE-SRV-01監査ログ"
+      ],
+      "basis": "expert_knowledge"
+    },
+    {
+      "finding_id": "NF-009",
+      "related_situation_id": [
+        "INJ-04",
+        "INJ-05"
+      ],
+      "description": "共有ファイルが開けない、またはファイル名が通常と異なるという利用者申告の原因はPCAPだけでは確認できない。",
+      "why_not_pcap_observable": "利用者申告は状況付与として提示された事実であり、PCAPはそのユーザー体験やファイル状態、原因を直接記録しない。",
+      "required_information": [
+        "利用者申告内容の記録",
+        "FILE-SRV-01のファイル状態",
+        "共有設定",
+        "端末ログ",
+        "ファイル監査ログ"
+      ],
+      "basis": "expert_knowledge"
+    }
+  ],
+  "situation_to_finding_map": [
+    {
+      "situation_id": "INJ-01",
+      "pcap_finding_ids": [
+        "F-001",
+        "F-002"
+      ],
+      "non_pcap_finding_ids": [
+        "NF-001",
+        "NF-002"
+      ],
+      "learning_focus": "外部接続の事実、通信回数の違い、VPN認証・脆弱性悪用の未確認事項を分ける。"
+    },
+    {
+      "situation_id": "INJ-02",
+      "pcap_finding_ids": [
+        "F-003",
+        "F-004",
+        "F-005",
+        "F-006",
+        "F-007",
+        "F-008",
+        "F-009",
+        "F-010"
+      ],
+      "non_pcap_finding_ids": [
+        "NF-001",
+        "NF-003",
+        "NF-004"
+      ],
+      "learning_focus": "内部重要サービスと複数セグメントへの通信事実を整理し、認証成功・権限取得・水平展開成功を仮説と分ける。"
+    },
+    {
+      "situation_id": "INJ-03",
+      "pcap_finding_ids": [
+        "F-011",
+        "F-012"
+      ],
+      "non_pcap_finding_ids": [
+        "NF-005"
+      ],
+      "learning_focus": "SMB通信の増加と通常通信を比較し、ファイル閲覧・コピー・窃取をPCAPだけで断定しない。"
+    },
+    {
+      "situation_id": "INJ-04",
+      "pcap_finding_ids": [
+        "F-013",
+        "F-014",
+        "F-015",
+        "F-016"
+      ],
+      "non_pcap_finding_ids": [
+        "NF-004",
+        "NF-005",
+        "NF-007",
+        "NF-008",
+        "NF-009"
+      ],
+      "learning_focus": "利用者申告、PCAP上の通信、ホスト側で追加確認すべき事項を分け、初動の封じ込めと証跡保全を検討する。"
+    },
+    {
+      "situation_id": "INJ-05",
+      "pcap_finding_ids": [
+        "F-001",
+        "F-002",
+        "F-003",
+        "F-004",
+        "F-005",
+        "F-006",
+        "F-007",
+        "F-008",
+        "F-009",
+        "F-010",
+        "F-011",
+        "F-012",
+        "F-013",
+        "F-014",
+        "F-015",
+        "F-016",
+        "F-017",
+        "F-018"
+      ],
+      "non_pcap_finding_ids": [
+        "NF-001",
+        "NF-002",
+        "NF-003",
+        "NF-004",
+        "NF-005",
+        "NF-006",
+        "NF-007",
+        "NF-008",
+        "NF-009"
+      ],
+      "learning_focus": "全時系列を統合し、確認済み事実、仮説、未確認事項、追加ログ、封じ込め・証跡保全・エスカレーションを確度付きでまとめる。"
+    }
+  ],
+  "learner_misconceptions": [
+    {
+      "misconception": "外部IPからVPN装置に通信があったので侵入成功である。",
+      "correction": "PCAPで言えるのは通信の有無、時刻、送信元、宛先、ポート、回数などまでであり、認証成功や侵入成功はUTM/VPNログ等で確認する。",
+      "related_situation_id": "INJ-01"
+    },
+    {
+      "misconception": "KerberosやLDAP通信が見えたのでAD認証に成功し、管理者権限を取得した。",
+      "correction": "PCAPで確認できるのはKerberosやLDAP通信の存在であり、認証結果や権限取得はADログやアカウント情報の確認が必要である。",
+      "related_situation_id": "INJ-02"
+    },
+    {
+      "misconception": "複数VLAN宛のTCP/445通信があるので水平展開に成功した。",
+      "correction": "複数宛先への接続は探索や水平展開の可能性を検討する材料だが、成功の断定には端末・EDR・認証ログが必要である。",
+      "related_situation_id": "INJ-02"
+    },
+    {
+      "misconception": "SMB通信量が増えたのでファイルがコピーされ、情報窃取された。",
+      "correction": "SMB通信量の増加だけではファイル操作や情報窃取は断定できない。FILE-SRV-01の監査ログや端末ログを追加確認する。",
+      "related_situation_id": "INJ-03"
+    },
+    {
+      "misconception": "共有ファイルが開けないという申告があるのでランサムウェアによる暗号化が確定した。",
+      "correction": "利用者申告は重要な事実だが原因の断定ではない。ファイル状態、EDR/AV、サーバ・端末ログを確認する。",
+      "related_situation_id": "INJ-04"
+    },
+    {
+      "misconception": "特定端末から他端末へのTCP/445通信があるため、その端末が原因端末である。",
+      "correction": "送信元端末と通信先は確認できても、侵害や起点の確定には複数ログの突合が必要である。",
+      "related_situation_id": "INJ-04"
+    },
+    {
+      "misconception": "外部宛HTTPS通信が見えたのでC2通信または情報窃取が成立した。",
+      "correction": "外部宛HTTPSの存在は確認できるが、暗号化された内容や意図はPCAPだけでは分からない。UTM/プロキシ/EDR等を確認する。",
+      "related_situation_id": "INJ-05"
+    },
+    {
+      "misconception": "状況付与1から5の流れがランサムウェア事案らしいため、初動報告では攻撃成功や暗号化を断定してよい。",
+      "correction": "初動報告では証拠ごとの確度を維持し、確認済み事実、仮説、未確認事項を明確に分ける。",
+      "related_situation_id": "INJ-05"
+    }
+  ],
+  "followup_questions": [
+    {
+      "question_id": "QF-001",
+      "related_situation_id": "INJ-01",
+      "question": "VPN装置への外部接続について、認証成功を確認するには何を見るべきか。",
+      "expected_information": "UTM/VPN認証ログ、接続元IP別の成功・失敗、対象アカウント、時刻、ログ保全状況。",
+      "category": "additional_log_review"
+    },
+    {
+      "question_id": "QF-002",
+      "related_situation_id": "INJ-01",
+      "question": "外部接続が通常の保守通信かどうかを確認するには何が必要か。",
+      "expected_information": "保守予定、許可送信元、UTM/VPN設定、管理ログ、接続元の既知性。",
+      "category": "configuration_and_context_review"
+    },
+    {
+      "question_id": "QF-003",
+      "related_situation_id": "INJ-02",
+      "question": "KerberosやLDAP通信が観測されたとき、認証結果や権限の変化を確認するには何を見るべきか。",
+      "expected_information": "ADセキュリティログ、Kerberos関連ログ、アカウント変更履歴、グループメンバーシップ変更履歴。",
+      "category": "additional_log_review"
+    },
+    {
+      "question_id": "QF-004",
+      "related_situation_id": "INJ-02",
+      "question": "複数セグメント宛のTCP/445通信が探索や水平展開に関係するかを確認するには何が必要か。",
+      "expected_information": "端末EDR/OSログ、ファイアウォールログ、認証ログ、接続先端末の受信記録、実行プロセス情報。",
+      "category": "endpoint_and_log_correlation"
+    },
+    {
+      "question_id": "QF-005",
+      "related_situation_id": "INJ-03",
+      "question": "FILE-SRV-01へのSMB通信増加が具体的なファイル操作を伴ったかを確認するには何を見るべきか。",
+      "expected_information": "FILE-SRV-01のアクセスログ、ファイル監査ログ、共有設定、対象アカウント利用履歴。",
+      "category": "additional_log_review"
+    },
+    {
+      "question_id": "QF-006",
+      "related_situation_id": "INJ-03",
+      "question": "SMB通信の増加が通常業務と異なるかを判断するために何を比較すべきか。",
+      "expected_information": "平常時の通信回数・通信量・利用時間帯、通常利用端末、業務予定、FILE-SRV-01の利用傾向。",
+      "category": "baseline_comparison"
+    },
+    {
+      "question_id": "QF-007",
+      "related_situation_id": "INJ-04",
+      "question": "共有ファイル利用不可の原因や暗号化有無を確認するには何を見るべきか。",
+      "expected_information": "FILE-SRV-01のファイル状態と監査ログ、EDR/AVログ、端末OSログ、ファイル更新履歴。",
+      "category": "host_and_server_review"
+    },
+    {
+      "question_id": "QF-008",
+      "related_situation_id": "INJ-04",
+      "question": "被害拡大を抑えつつ証跡を失わないために、初動で何を保全・共有すべきか。",
+      "expected_information": "UTM/VPN・AD・FILE-SRV-01・端末ログの保全、対象通信と端末の範囲、隔離候補、実施措置と時刻、上位者への共有。",
+      "category": "containment_and_evidence_preservation"
+    },
+    {
+      "question_id": "QF-009",
+      "related_situation_id": "INJ-05",
+      "question": "内部端末から外部へのHTTPS通信がC2や情報窃取かを確認するには何を見るべきか。",
+      "expected_information": "UTM/プロキシログ、接続先評価、EDRログ、端末プロセス、ファイルアクセス履歴、通信量と時系列。",
+      "category": "additional_log_review"
+    },
+    {
+      "question_id": "QF-010",
+      "related_situation_id": "INJ-05",
+      "question": "初動報告で、確認済み事実と未確認事項をどのように分けてエスカレーションすべきか。",
+      "expected_information": "PCAPで確認できた通信事実、利用者申告、認証・侵害・窃取・暗号化の未確認事項、追加ログ取得状況、封じ込めと証跡保全の優先事項。",
+      "category": "escalation_and_reporting"
+    }
+  ]
+}
